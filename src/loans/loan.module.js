@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 
-import { loanController } from '../controllers/index.js'
+import loanController from './loan.controller.js'
 
 router.post('/create-loan', loanController.addLoan)
 

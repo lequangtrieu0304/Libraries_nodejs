@@ -1,4 +1,4 @@
-import { loanService } from "../services/index.js"
+import loanService from "./loan.service.js"
 
 const addLoan = async (req, res, next) => {
     try {

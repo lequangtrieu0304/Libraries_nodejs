@@ -1,4 +1,4 @@
-import { returnService } from "../services/index.js"
+import returnService from "./return.service.js"
 
 const createReturn = async (req, res, next) => {
     try {

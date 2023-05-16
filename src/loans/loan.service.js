@@ -1,9 +1,7 @@
 import { BAD_REQUEST, NOT_FOUND } from "../exceptions/index.js"
-import { 
-    Loan, 
-    Book, 
-    Student 
-} from "../models/index.js"
+import Loan from "./loan.model.js"
+import Book from "../books/book.model.js"
+import Student from "../students/student.model.js"
 
 const addLoan = async ({ student, books, returnDate }) => {
     try {

@@ -1,10 +1,8 @@
 import { BAD_REQUEST, NOT_FOUND } from "../exceptions/index.js"
-import { 
-    Book, 
-    Loan, 
-    Return, 
-    Student 
-} from "../models/index.js"
+import Book from "../books/book.model.js"
+import Loan from "../loans/loan.model.js"
+import Student from "../students/student.model.js"
+import Return from "./return.model.js"
 import { compareDate } from "../utils/compare.date.js"
 
 const createReturn = async ({ loan_id, bookArr }) => {

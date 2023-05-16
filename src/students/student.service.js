@@ -1,5 +1,5 @@
 import { BAD_REQUEST } from "../exceptions/Bad_Request.js"
-import { Student } from "../models/index.js"
+import Student from "./student.model.js"
 
 const addStudent = async ({name, majors, address, phone}) => {
     try {

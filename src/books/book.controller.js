@@ -1,4 +1,5 @@
-import { bookService } from '../services/index.js'
+import bookService from './book.service.js'
+import { BookValidation } from './book.validation.js'
 
 const create = async (req, res, next) => {
     try {
@@ -8,7 +9,7 @@ const create = async (req, res, next) => {
         if(result?.error) 
             throw result.error 
         return res.status(201).json({
-            message: "Tao thanh cong",
+            message: BookValidation.CREATED,
             data: result
         })
     }

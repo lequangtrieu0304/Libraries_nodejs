@@ -2,7 +2,8 @@ import {
     BAD_REQUEST, 
     NOT_FOUND 
 } from "../exceptions/index.js"
-import { Book } from "../models/index.js"
+import Book from "./book.model.js"
+import { BookValidation } from "./book.validation.js"
 
 const addBook = async ({ title, author, copies }) => {
     try {
@@ -23,7 +24,7 @@ const getAllBooks = async () => {
     try {
         const listBooks = await Book.find({}).exec()
         if(listBooks.length === 0){
-            throw new BAD_REQUEST('Danh sach trong')
+            throw new BAD_REQUEST(BookValidation.EMPTY)
         }
         return listBooks
     }
@@ -48,8 +49,8 @@ const deleteBook = async (id) => {
     try {
         const book = await Book.findById(id)
         const result = await book.deleteOne()
-        if(result){
-            throw new BAD_REQUEST('Xoa thanh cong')
+        if(!result){
+            throw new BAD_REQUEST(BookValidation.DELETE_FAILED)
         }
         return result
     }

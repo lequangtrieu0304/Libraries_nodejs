@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import Loan from "./Loan.js";
+import Loan from "../loans/loan.model.js";
 
 const studentSchema = new mongoose.Schema({
     name: { type: String, required: true },
